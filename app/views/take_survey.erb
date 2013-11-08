@@ -1,0 +1,29 @@
+<div class="container">
+
+  <h1><%= current_survey.title%></h1>
+<% questions = current_survey.questions%>
+<% count = 1 %>
+
+<form action="/survey/<%=current_survey.id%>" method="POST">
+<% questions.each do |question| %>
+
+  <h4> Question <%=count%>: <%= question.text %></h4>
+  <% choices = question.choices %>
+
+  <select name=<%= question.id %>>
+  <% choices.each do |choice| %>
+    <option value="<%= choice.id %>"><%= choice.text %></option>
+  <% end %>
+    </select>
+    <% count += 1 %>
+    <% end %>
+    <br>
+
+    <br>
+    <p> You should totally submit this </p>
+  <input type="submit" value="Submit">
+</form>
+
+
+
+</div>
