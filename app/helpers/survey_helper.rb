@@ -4,9 +4,9 @@ end
 
 def submit_survey
   survey_taker = current_survey.survey_takers.create(user_id: session[:id])
-  question = 1
+  counter = 1
   current_survey.questions.length.times do
-    survey_taker.responses.create(choice_id: params["#{question}"])
-    question += 1
+    survey_taker.responses.create(choice_id: params["#{counter}"])
+    counter += 1
   end
 end

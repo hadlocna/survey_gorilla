@@ -55,10 +55,11 @@ end
 
 post '/survey/:survey_id' do
   submit_survey
+  # params.inspect
   redirect "/statistics/#{current_survey.id}"
 end
 
 get '/statistics/:survey_id' do
-
+  # params.inspect
   erb :statistics
 end
