@@ -10,7 +10,7 @@
   <h4> Question <%=count%>: <%= question.text %></h4>
   <% choices = question.choices %>
 
-  <select name=<%= question.id %>>
+  <select name=<%= count %>>
   <% choices.each do |choice| %>
     <option value="<%= choice.id %>"><%= choice.text %></option>
   <% end %>
