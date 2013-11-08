@@ -2,6 +2,7 @@ source :rubygems
 
 # PostgreSQL driver
 gem 'pg'
+gem 'bcrypt-ruby'
 
 gem "debugger", "~> 1.6.2"
 # Sinatra driver
