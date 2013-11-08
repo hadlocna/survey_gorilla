@@ -15,5 +15,9 @@ q.choices.create(text: '47')
 choice.responses.create(survey_taker_id: 1)
 
 
-
-
+q2 = survey.questions.create(text: 'how much?')
+q2.choices.create(text: '22')
+q2.choices.create(text: '2')
+q2.choices.create(text: '6')
+q2.choices.create(text: '9')
+q2.choices.create(text: '27')
