@@ -1,0 +1,9 @@
+<div class="container">
+
+  <% surveys = Survey.all %>
+  <% surveys.each do |survey| %>
+  <li><a href = "/survey/<%=survey.id%>"><%=survey.title%></a></li>
+  <%end%>
+
+
+</div>

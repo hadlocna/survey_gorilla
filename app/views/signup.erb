@@ -1,0 +1,15 @@
+<div class="container">
+
+<% if session[:signup_error] %>
+  <p class="error"> <%= session[:signup_error] %> </p>
+<% end %>
+
+<form action="/signup" method="POST">
+  <input type="text" name="name" placeholder="Name"><br>
+  <input type="text" name="email" placeholder="Email"><br>
+  <input type="password" name="password" placeholder="Password"><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+</div>
