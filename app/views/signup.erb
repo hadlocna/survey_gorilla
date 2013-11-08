@@ -5,9 +5,10 @@
 <% end %>
 
 <form action="/signup" method="POST">
-  <input type="text" name="name" placeholder="Name"><br>
-  <input type="text" name="email" placeholder="Email"><br>
+  <input type="text" name="user[name]" placeholder="Name"><br>
+  <input type="text" name="user[email]" placeholder="Email"><br>
   <input type="password" name="password" placeholder="Password"><br>
+  <input type="password_confirmation" name="password_confirmation" placeholder="Password"><br>
   <input type="submit" value="Submit">
 </form>
 

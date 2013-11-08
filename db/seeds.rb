@@ -1,5 +1,9 @@
-user = User.create(name: 'fred', email: 'fred@dbc.com', password: '123')
-wilma = User.create(name: 'wilma', email: 'wilma@dbc.com', password: '123')
+user = User.new(name: 'fred', email: 'fred@dbc.com')
+user.password = '123'
+user.save!
+wilma = User.new(name: 'wilma', email: 'wilma@dbc.com')
+wilma.password = '123'
+wilma.save!
 
 survey = user.authored_surveys.create(title: 'how many salamanders in a maelstrom')
 survey.survey_takers.create(user_id: 2)

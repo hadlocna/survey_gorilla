@@ -11,8 +11,8 @@ get '/login' do
 end
 
 post '/login' do
-  login_user(params[:email], params[:password])
-
+  # login_user(params[:email], params[:password])
+  login_user
   if session[:login_error]
     erb :login
   else
@@ -25,7 +25,7 @@ get '/signup' do
 end
 
 post '/signup' do
-  signup_user(params[:name], params[:email], params[:password])
+  signup_user
    if session[:signup_error]
     erb :signup
   else
