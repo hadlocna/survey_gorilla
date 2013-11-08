@@ -1,9 +1,48 @@
 .container {
+
   margin: 20px auto;
+  margin-top: 100px;
   width: 600px;
-  padding: 0px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   border: 1px dotted black;
 }
+
 th {
   text-align: left;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.align-right {
+  float: right;
+  padding-right: 20px;
+}
+
+.align-left {
+  padding-left: 20px;
+}
+
+.error {
+  color: red;
+}
+
+#header {
+  background-color: black;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+}
+
+#header li {
+  display: inline;
+}
+
+#header a {
+  color: white;
+  text-decoration: none;
+  font-family: Tahoma;
 }
