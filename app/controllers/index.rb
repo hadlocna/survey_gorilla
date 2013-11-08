@@ -47,3 +47,18 @@ get '/survey' do
 
   erb :survey
 end
+
+get '/survey/:survey_id' do
+
+  erb :take_survey
+end
+
+post '/survey/:survey_id' do
+  submit_survey
+  redirect "/statistics/#{current_survey.id}"
+end
+
+get '/statistics/:survey_id' do
+
+  erb :statistics
+end
