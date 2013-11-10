@@ -80,6 +80,7 @@ th {
 
 
 #header {
+  z-index: 1;
   background-color: black;
 /*  padding-top: 25px;
   padding-bottom: 25px;*/
