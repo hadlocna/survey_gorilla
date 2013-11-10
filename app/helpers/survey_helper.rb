@@ -18,10 +18,14 @@ helpers do
   end
 
   def choice_percentage(choice)
-    matches = Response.where(choice_id: choice.id).count
+    matches = choice_count(choice)
     total_responses = current_survey.survey_takers.count
     return 0 if matches == 0
     percent = (matches.to_f / total_responses * 100).round()
+  end
+
+  def choice_count(choice)
+    Response.where(choice_id: choice.id).count
   end
 
   def completed_survey_ids
