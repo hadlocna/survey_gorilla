@@ -126,3 +126,42 @@ th {
 #header a:hover {
   color: #00CF00;
 }
+
+#footer{
+position: fixed;
+bottom: 0px;
+background-color: black;
+/*background-image: url('http://www.devonwerkheiser.com/wp-content/uploads/2013/05/footer-texture.jpg');*/
+width: 100%;
+}
+
+#footer section{
+  color: white;
+  text-align: center;
+  font: tahoma;
+  font-size: 17px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*stats styling here*/
+
+/*.data_table th:first-child {
+  text-align: right;
+  padding-right: 15px;
+}
+
+.data_table td:first-child {
+  border: 1px solid green;
+  text-align: right;
+  padding-right: 15px;
+  border-left: none;
+  width: 200px;
+}
+.data_table td:last-child {
+  padding-left: 10px;
+  width: 150px;
+}
+.data_table th {
+  padding-left: 15px;
+}*/

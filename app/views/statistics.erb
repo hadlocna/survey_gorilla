@@ -1,23 +1,15 @@
 <div class = "container">
 
-<h1> Statistics for:</h1>
-<h2><%= current_survey.title %></h2>
+<!-- <h1> Statistics for:</h1> -->
+<h1><%= current_survey.title %></h1>
+<h2>Stats</h2>
 
 <% questions = current_survey.questions %>
-<!-- <% count = 1 %> -->
-<!--
-<% questions.each_with_index do |question, index| %>
-  <h4> Question <%=index + 1%>: <%=question.text%></h4>
-  <% choices = question.choices %>
-  <% choices.each do |choice| %>
-    <p> Choice <%= choice.text%>: <%= choice_percentage(choice) %>% with <%= choice_count(choice) %> votes</p>
-  <%end%>
-<%end%> -->
 
 <% questions.each_with_index do |q, i| %>
 <div class='results_graph'>
 <table class='data_table'>
-  <tr><th><%= q.text %></th><th>votes</th></tr>
+  <tr><th><%= q.text %></th><th>Votes</th></tr>
   <% q.choices.each do |choice| %>
     <tr>
       <td><%= choice.text %></td>
