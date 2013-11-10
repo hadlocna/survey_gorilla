@@ -1,3 +1,5 @@
+require 'debugger'
+
 helpers do
 
   def current_survey
@@ -25,7 +27,8 @@ helpers do
     SurveyTaker.where(user_id: session[:id]).each do |completed_survey|
       completed_survey_ids << completed_survey.survey_id
     end
-    completed_survey_ids.uniq!
+    # debugger
+    completed_survey_ids.uniq
   end
   # This is broken because of our associations
   # def testing_associations

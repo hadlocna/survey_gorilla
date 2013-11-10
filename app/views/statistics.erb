@@ -5,7 +5,7 @@
 <% questions = current_survey.questions %>
 <!-- <% count = 1 %> -->
 <% questions.each_with_index do |question, index| %>
-  <h4> Question <%=index%>: <%=question.text%></h4>
+  <h4> Question <%=index + 1%>: <%=question.text%></h4>
   <% choices = question.choices %>
   <% choices.each do |choice| %>
     <p> Choice <%= choice.text%>: <%= choice_percentage(choice) %>%</p>
