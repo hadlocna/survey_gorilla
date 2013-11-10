@@ -6,6 +6,7 @@ get '/' do
 end
 
 get '/login' do
+  session[:login_error] = nil
   erb :login
 end
 
