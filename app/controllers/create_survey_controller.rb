@@ -1,7 +1,12 @@
 require 'debugger'
+
 get '/create_survey' do 
-  # @user_id = session[:user_id]
-  erb :create_survey
+  if logged_in?
+    # @user_id = session[:user_id]
+    erb :create_survey
+  else
+    redirect '/login'
+  end
 end
 
 post '/create_survey' do 

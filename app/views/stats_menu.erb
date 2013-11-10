@@ -1,0 +1,26 @@
+<div class = "container">
+
+
+<!-- currently displays multiple links for multiple attempts -->
+  <h2 class='category-name'>Surveys You've Taken</h2>
+	<ul class='link-list'>
+	  <% current_user.taken_surveys.each do |survey| %>
+	    <li><a href="/statistics/<%=survey.id%>"><%= survey.title %></a></li>
+	  <% end %>
+	</ul>
+
+
+	<!-- authored surveys is not working?
+	too lazy to rake console stuff right now,
+	will look at tomorrow unless someone else
+	feels like fixing it first-->
+
+  <h2 class='category-name'>Surveys You've Created</h2>
+	<ul class='link-list'>
+	  <% current_user.authored_surveys.each do |survey| %>
+	    <li><a href="/statistics/#{survey.id}"><%= survey.title %></a></li>
+	  <% end %>
+	</ul>
+
+
+</div>
