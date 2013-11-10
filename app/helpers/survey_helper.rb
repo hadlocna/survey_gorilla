@@ -27,8 +27,39 @@ helpers do
     end
     completed_survey_ids.uniq!
   end
-  # This is broken
+  # This is broken because of our associations
   # def testing_associations
   #   current_user.taken_surveys
   # end
+
+  def write_survey(survey)
+    params.delete_if {|k, v| k =='title'}
+    # this leaves us with a params that is all q's and choices
+    params.each do |name, value|
+    # If the name starts with 'question'
+    if name[0,8] == 'question'
+      #Then create new question
+      question = Question.new(text: "#{value}")
+      # Go through all the params again, this time looking for choices
+      params.each do |k, choice|
+        # DOUBLE DIGIT Q, question__.length > 9, e.g. question10
+        if name.length > 9
+         if k[1, 2] == name[8, 2]
+          # e.g. 'q12choice3' against 'question12'
+          question.choices.new(text: "#{choice}")
+        end
+        # SINGLE DIGIT Q, 'q1choice2'.length == 9
+      elsif k.length == 9
+          if k[1] == name[8]
+            # e.g. 'q3choice2' against 'question3'
+          question.choices.new(text: "#{choice}")
+        end
+      end
+    end
+      # Then put the question, with choices now populated, into the survey
+      survey.questions << question
+    end
+  end
+  survey.save!
+  end
 end
