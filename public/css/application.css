@@ -7,12 +7,30 @@
   border: 1px dotted black;
 }
 
+.salamander {
+  width: 60px;
+  position: relative;
+  top: 8px;
+  right: 10px;
+}
+
 th {
   text-align: left;
 }
 
 .title {
   font-size: 24px;
+  position: relative;
+  bottom: 18px;
+}
+
+.nav-link {
+  position: relative;
+  top: 26px;
+}
+
+.display-inline {
+  display: inline;
 }
 
 .align-right {
@@ -28,10 +46,44 @@ th {
   color: red;
 }
 
+.cool-button {
+  background-color: black;
+  color: white;
+  border: solid black;
+  border-radius: 7px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.cool-button:hover {
+  color: #00CF00;
+}
+
+.link-list li {
+  list-style: none;
+}
+
+.link-list li a {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  display: inline-block;
+  width: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.link-list li a:hover {
+  color: #00CF00;
+}
+
+
 #header {
   background-color: black;
-  padding-top: 25px;
-  padding-bottom: 25px;
+/*  padding-top: 25px;
+  padding-bottom: 25px;*/
+  height: 80px;
   position: fixed;
   width: 100%;
   top: 0px;
@@ -45,4 +97,8 @@ th {
   color: white;
   text-decoration: none;
   font-family: Tahoma;
+}
+
+#header a:hover {
+  color: #00CF00;
 }
