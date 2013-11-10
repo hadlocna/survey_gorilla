@@ -15,6 +15,9 @@ gem 'carrierwave'
 
 gem 'activesupport'
 gem 'activerecord'
+gem 'uuid'
+gem 'curb'
+gem 'json'
 
 gem 'rake'
 
