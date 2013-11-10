@@ -25,20 +25,10 @@ th {
   bottom: 18px;
 }
 
-#footer{
-position: fixed;
-bottom: 0px;
-background-color: black;
-/*background-image: url('http://www.devonwerkheiser.com/wp-content/uploads/2013/05/footer-texture.jpg');*/
-width: 100%;
-height: 6%;
-}
-
-#footer p{
-  color: white;
-  text-align: center;
-  font: tahoma;
-  font-size: 17px;
+.question {
+  display: block;
+  margin-top: 80px;
+  margin-bottom: 20px;
 }
 
 .nav-link {
@@ -87,7 +77,7 @@ height: 6%;
 }
 
 .create-title {
-  display: inline-block;
+  display: inline;
   margin-bottom: 20px;
 }
 
@@ -136,7 +126,27 @@ height: 6%;
 #header a:hover {
   color: #00CF00;
 }
-.data_table th:first-child {
+
+#footer{
+position: fixed;
+bottom: 0px;
+background-color: black;
+/*background-image: url('http://www.devonwerkheiser.com/wp-content/uploads/2013/05/footer-texture.jpg');*/
+width: 100%;
+}
+
+#footer section{
+  color: white;
+  text-align: center;
+  font: tahoma;
+  font-size: 17px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*stats styling here*/
+
+/*.data_table th:first-child {
   text-align: right;
   padding-right: 15px;
 }
@@ -154,4 +164,4 @@ height: 6%;
 }
 .data_table th {
   padding-left: 15px;
-}
+}*/

@@ -33,13 +33,9 @@ helpers do
     SurveyTaker.where(user_id: session[:id]).each do |completed_survey|
       completed_survey_ids << completed_survey.survey_id
     end
-    # debugger
     completed_survey_ids.uniq
   end
-  # This is broken because of our associations
-  # def testing_associations
-  #   current_user.taken_surveys
-  # end
+
 
   def write_survey(survey)
     # upload photo for survey
@@ -51,6 +47,7 @@ helpers do
     end
     params.delete_if {|k, v| k =='title'}
     params.delete_if {|k, v| k =='title'}
+    params.delete_if {|k, v| v == ''}
     # this leaves us with a params that is all q's and choices
     params.each do |name, value|
     # If the name starts with 'question'

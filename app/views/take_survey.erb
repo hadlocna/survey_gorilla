@@ -6,7 +6,7 @@
 <!-- <h2><img src="/uploads/Oli.jpg" alt="didn't work"></h2> -->
   <% end %>
 
-<% questions = current_survey.questions%>
+<% questions = current_survey.questions.reverse%>
 <% count = 1 %>
 
 <form action="/survey/<%=current_survey.id%>" method="POST">
