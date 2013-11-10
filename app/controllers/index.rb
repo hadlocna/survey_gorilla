@@ -1,4 +1,4 @@
-enable :sessions
+# enable :sessions
 
 get '/' do
   # Look in app/views/index.erb
@@ -26,16 +26,11 @@ end
 
 post '/signup' do
   signup_user
-   if session[:signup_error]
+  if session[:signup_error]
     erb :signup
   else
     redirect '/'
   end
-end
-
-get '/statistics' do
-
-  erb :statistics
 end
 
 get '/logout' do
@@ -62,4 +57,11 @@ end
 get '/statistics/:survey_id' do
   # params.inspect
   erb :statistics
+end
+
+get '/completed_surveys' do
+  # @taken_surveys = test  ## => this association is broken
+  redirect '/' unless completed_survey_ids
+    @completed_surveys = completed_survey_ids().map { |s_id| Survey.find(s_id) }
+    erb :completed_surveys
 end

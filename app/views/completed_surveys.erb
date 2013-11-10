@@ -1,0 +1,16 @@
+<div class="container">
+<h2>Here are the surveys you have completed</h2>
+<p>click on a survey title to see statistics about responses</p>
+  <ul class='link-list'>
+  <% @completed_surveys.each do |survey| %>
+  <li><a href = "/survey/<%=survey.id%>"><%=survey.title%></a></li>
+  <% end %>
+  </ul>
+
+</div>
+
+
+
+
+
+

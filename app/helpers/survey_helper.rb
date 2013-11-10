@@ -19,4 +19,16 @@ helpers do
     return 0 if matches == 0
     percent = (matches.to_f / total_responses * 100).round()
   end
+
+  def completed_survey_ids
+    completed_survey_ids = []
+    SurveyTaker.where(user_id: session[:id]).each do |completed_survey|
+      completed_survey_ids << completed_survey.survey_id
+    end
+    completed_survey_ids.uniq!
+  end
+  # This is broken
+  # def testing_associations
+  #   current_user.taken_surveys
+  # end
 end
