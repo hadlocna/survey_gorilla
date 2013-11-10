@@ -25,6 +25,22 @@ th {
   bottom: 18px;
 }
 
+#footer{
+position: fixed;
+bottom: 0px;
+background-color: black;
+/*background-image: url('http://www.devonwerkheiser.com/wp-content/uploads/2013/05/footer-texture.jpg');*/
+width: 100%;
+height: 6%;
+}
+
+#footer p{
+  color: white;
+  text-align: center;
+  font: tahoma;
+  font-size: 17px;
+}
+
 .nav-link {
   position: relative;
   top: 26px;
