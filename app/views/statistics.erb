@@ -2,14 +2,13 @@
 
 <h1> THIS IS THE STATISTICS PAGE </h1>
 
-<%survey = Survey.find(current_survey.id)%>
-<% questions = survey.questions %>
-<% count = 1 %>
-<% questions.each do |question| %>
-  <p> Question <%=count%>: <%=question.text%></p>
+<% questions = current_survey.questions %>
+<!-- <% count = 1 %> -->
+<% questions.each_with_index do |question, index| %>
+  <h4> Question <%=index%>: <%=question.text%></h4>
   <% choices = question.choices %>
   <% choices.each do |choice| %>
-    <p> Choice <%= choice.text%>: <%= Response.where(choice_id: choice.id).count%></p>
+    <p> Choice <%= choice.text%>: <%= choice_percentage(choice) %>%</p>
   <%end%>
 <%end%>
 
