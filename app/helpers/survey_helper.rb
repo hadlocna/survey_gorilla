@@ -1,4 +1,4 @@
-helpers do
+ helpers do
 
   def current_survey
     Survey.find(params[:survey_id])
@@ -33,6 +33,13 @@ helpers do
   # end
 
   def write_survey(survey)
+    # upload photo for survey
+    File.open('public/uploads/' + params['file'][:filename], "w") do |f|
+      f.write(params['file'][:tempfile].read)
+    end
+    survey.photo = (params['file'][:filename])
+
+    params.delete_if {|k, v| k =='title'}
     params.delete_if {|k, v| k =='title'}
     # this leaves us with a params that is all q's and choices
     params.each do |name, value|
