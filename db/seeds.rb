@@ -8,7 +8,6 @@ wilma.password = '123'
 wilma.save!
 
 survey = user.authored_surveys.create(title: 'how many salamanders in a maelstrom')
-survey.survey_takers.create(user_id: 2)
 q = survey.questions.create(text: 'how many?')
 survey.photo = 'Oli.jpg'
 survey.save
