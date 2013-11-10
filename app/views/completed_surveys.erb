@@ -1,12 +1,20 @@
 <div class="container">
-<h2>Here are the surveys you have completed</h2>
-<p>click on a survey title to see statistics about responses</p>
+  <% if @completed_surveys.length > 0 %>
+  <h2>Here are the surveys you have completed</h2>
+  <p>click on a survey title to see statistics about responses</p>
   <ul class='link-list'>
-  <% @completed_surveys.each do |survey| %>
-  <li><a href = "/statistics/<%=survey.id%>"><%=survey.title%></a></li>
-  <% end %>
+    <% @completed_surveys.each do |survey| %>
+    <li><a href = "/statistics/<%=survey.id%>"><%=survey.title%></a></li>
+    <% end %>
   </ul>
+  <% else %>
+  <h2>You have not completed any surveys</h2>
+  <% if !session[:id] %><p>Login or create an account to complete surveys</p>
+  <% else %><p>Complete surveys to see their results</p>
+  <% end %>
 
+
+  <% end %>
 </div>
 
 
