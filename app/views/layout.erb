@@ -20,14 +20,16 @@
 
 
 <div id='header'>
-<% if session[:id] == nil %>
-  <li><a class='align-left title' href='/'>SurveyMander</a></li>
-  <li><a class='align-right' href='/login'>Login</a></li>
-  <li><a class='align-right' href='/signup'>Sign up</a></li>
-<% else %>
-  <li><a class='align-left title' href='/'>SurveyMander</a></li>
-  <li><a class='align-right' href='/logout'>Log out</a></li>
-<% end %>
+  <% if session[:id] == nil %>
+    <li><a class='align-left title' href='/'>SurveyMander</a></li>
+    <a href='/'><img src='/green-salamander.png' class='salamander'></a>
+    <li><a class='align-right nav-link' href='/login'>Login</a></li>
+    <li><a class='align-right nav-link' href='/signup'>Sign up</a></li>
+  <% else %>
+    <li><a class='align-left title' href='/'>SurveyMander</a></li>
+    <a href='/'><img src='/green-salamander.png' class='salamander'></a>
+    <li><a class='align-right nav-link' href='/logout'>Log out</a></li>
+  <% end %>
 </div>
 
 
