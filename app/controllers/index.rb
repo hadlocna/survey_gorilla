@@ -79,10 +79,10 @@ get '/statistics/:survey_id' do
 end
 
 
-get '/completed_surveys' do
-  # @taken_surveys = test  ## => this association is broken
-  # redirect '/' unless completed_survey_ids.length < 0
-    @completed_surveys = completed_survey_ids().map { |s_id| Survey.find(s_id) }
-    erb :completed_surveys
-end
+# get '/completed_surveys' do
+#   # @taken_surveys = test  ## => this association is broken
+#   # redirect '/' unless completed_survey_ids.length < 0
+#     @completed_surveys = completed_survey_ids().map { |s_id| Survey.find(s_id) }
+#     erb :completed_surveys
+# end
 
