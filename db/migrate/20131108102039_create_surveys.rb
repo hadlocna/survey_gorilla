@@ -3,6 +3,7 @@ class CreateSurveys < ActiveRecord::Migration
     create_table :surveys do |t|
       t.integer :author_id
       t.string :title
+      t.string :photo
       t.timestamps
     end
   end
