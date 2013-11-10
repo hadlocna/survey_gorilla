@@ -1,6 +1,8 @@
+
 require 'debugger'
 
 helpers do
+
 
   def current_survey
     Survey.find(params[:survey_id])
@@ -36,6 +38,14 @@ helpers do
   # end
 
   def write_survey(survey)
+    # upload photo for survey
+    if params['file']
+      File.open('public/uploads/' + params['file'][:filename], "w") do |f|
+        f.write(params['file'][:tempfile].read)
+      end
+      survey.photo = (params['file'][:filename])
+    end
+    params.delete_if {|k, v| k =='title'}
     params.delete_if {|k, v| k =='title'}
     # this leaves us with a params that is all q's and choices
     params.each do |name, value|
@@ -53,16 +63,16 @@ helpers do
         end
         # SINGLE DIGIT Q, 'q1choice2'.length == 9
       elsif k.length == 9
-          if k[1] == name[8]
+        if k[1] == name[8]
             # e.g. 'q3choice2' against 'question3'
-          question.choices.new(text: "#{choice}")
+            question.choices.new(text: "#{choice}")
+          end
         end
       end
-    end
       # Then put the question, with choices now populated, into the survey
       survey.questions << question
     end
   end
   survey.save!
-  end
+end
 end

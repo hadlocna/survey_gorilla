@@ -10,7 +10,8 @@ wilma.save!
 survey = user.authored_surveys.create(title: 'how many salamanders in a maelstrom')
 survey.survey_takers.create(user_id: 2)
 q = survey.questions.create(text: 'how many?')
-
+survey.photo = 'Oli.jpg'
+survey.save
 # choice = q.choices.create(text: '1')
 q.choices.create(text: '2')
 q.choices.create(text: '3')
@@ -44,5 +45,6 @@ end
     end
     s.questions << q
   end
+  s.photo = ['Oli.jpg', 'Meara.jpg', 'Elaine.jpg', 'Nathan.jpg', 'Chris.jpg'].sample
   s.save!
 end

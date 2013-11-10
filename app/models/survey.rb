@@ -5,5 +5,6 @@ class Survey < ActiveRecord::Base
   has_many :survey_takers
   # has_many :taken_surveys, :through => :survey_takers, :source => :users
   has_many :users, through: :survey_takers
+  has_many :photos
 
 end

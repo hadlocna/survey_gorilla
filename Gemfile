@@ -11,6 +11,7 @@ gem 'sinatra-contrib'
 
 # Use Thin for our web server
 gem 'thin'
+gem 'carrierwave'
 
 gem 'activesupport'
 gem 'activerecord'
