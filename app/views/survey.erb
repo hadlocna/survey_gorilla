@@ -3,8 +3,8 @@
   <% surveys = Survey.all %>
   <ul class='link-list'>
   <% surveys.each do |survey| %>
-  <span><img src="/uploads/<%= survey.photo %>" alt="didn't work" height='50px' width='37px'></span>
-  <li><a href = "/survey/<%=survey.id%>"><%=survey.title%></a></li>
+
+  <li><a href = "/survey/<%=survey.id%>"><span><% if survey.photo  %><img src="/uploads/<%= survey.photo %>" alt="didn't work" height='50px' width='37px'><% end %></span><%=survey.title%></a></li>
   <%end%>
   </ul>
 
