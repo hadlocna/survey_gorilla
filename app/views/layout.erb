@@ -7,27 +7,30 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/results.css">
   <!--
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
-
+  <script type="text/javascript" src="/js/d3.v2.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="/js/results.js"></script>
+
 
   <title></title>
 </head>
 
 
 <div id='header'>
-<% if session[:id] == nil %>
+  <% if session[:id] == nil %>
   <li><a class='align-left title' href='/'>SurveyMander</a></li>
   <li><a class='align-right' href='/login'>Login</a></li>
   <li><a class='align-right' href='/signup'>Sign up</a></li>
-<% else %>
+  <% else %>
   <li><a class='align-left title' href='/'>SurveyMander</a></li>
   <li><a class='align-right' href='/logout'>Log out</a></li>
-<% end %>
+  <% end %>
 </div>
 
 

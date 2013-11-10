@@ -23,3 +23,7 @@ group :test do
   gem 'faker'
   gem 'rspec'
 end
+
+gem "ruport", "~> 1.6.3"
+
+gem "acts_as_reportable", "~> 1.1.1"

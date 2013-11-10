@@ -1,0 +1,23 @@
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: deeppink;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.question-table {
+  float: left;
+  /*display: none;*/
+}
+
+.graph {
+  clear: both;
+}
