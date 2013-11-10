@@ -1,19 +1,25 @@
 <!-- Navbar -->
 <div class='container'>
 <h1>Create a Survey!</h1>
+
 <form action="/create_survey" method='post' enctype='multipart/form-data'>
-  <label>Title<input type="text" name="title" placeholder="Enter Survey Title"></label>
-  <button class='add-question cool-button'>Add Question</button> <br><br>
-  <label for="file">upload a photo for your survey</label> <br>
-  <input type="file" name='file'>
-  
-<div class='survey-form'>
 
-  <!-- Add Question Button -->
-  
+<input type="submit" value='Create Survey!' class='cool-button button-right'>
+<div class='clear-float'></div>
+<button class='add-question cool-button button-right'>Add Question</button>
 
-</div>
+  <input type="text" name="title" placeholder="Survey Title" class='create-title'>
+  <br>
+  <label for="file">Upload a photo for your survey:</label>
+  <!-- <button class='cool-button'> --><input type="file" name='file'><!-- Upload an Image!</button> -->
+  <br>
+
+  <div class='survey-form'>
+
+
+  </div>
+
 <br><br><br>
-<input type="submit" value='Create my Survey!' class='cool-button'>
+
 </form>
 </div>

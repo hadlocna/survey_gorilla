@@ -47,6 +47,16 @@ th {
   color: red;
 }
 
+.clear-float {
+  clear: both;
+}
+
+.button-right {
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
 .cool-button {
   background-color: black;
   color: white;
@@ -58,6 +68,11 @@ th {
 
 .cool-button:hover {
   color: #00CF00;
+}
+
+.create-title {
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
 .link-list li {
