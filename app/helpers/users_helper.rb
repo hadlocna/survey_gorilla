@@ -1,3 +1,5 @@
+helpers do
+
 def current_user
   User.find_by_id(session[:id])
 end
@@ -15,6 +17,10 @@ def login_user
   else
     session[:login_error] = "User not found"
   end
+end
+
+def logged_in?
+  !session[:id].nil?
 end
 
 # def login_user(email, password)
@@ -37,4 +43,6 @@ def signup_user
   else
     session[:signup_error] = "Sign up failed!  Please try again."
   end
+end
+
 end

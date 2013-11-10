@@ -6,7 +6,6 @@ get '/' do
 end
 
 get '/login' do
-
   erb :login
 end
 
@@ -33,10 +32,14 @@ post '/signup' do
   end
 end
 
-get '/statistics' do
-
-  erb :statistics
+get '/statistics' do 
+  if logged_in?
+    erb :stats_menu
+  else
+    redirect '/login'
+  end
 end
+
 
 get '/logout' do
   session.clear
@@ -44,13 +47,19 @@ get '/logout' do
 end
 
 get '/survey' do
-
-  erb :survey
+  if logged_in?
+    erb :survey
+  else
+    redirect '/login'
+  end
 end
 
 get '/survey/:survey_id' do
-
-  erb :take_survey
+  if logged_in?
+    erb :take_survey
+  else
+    redirect '/login'
+  end
 end
 
 post '/survey/:survey_id' do
@@ -61,5 +70,10 @@ end
 
 get '/statistics/:survey_id' do
   # params.inspect
-  erb :statistics
+  if logged_in?
+    erb :statistics
+  else
+    redirect '/login'
+  end
 end
+
